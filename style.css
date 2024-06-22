@@ -1,0 +1,134 @@
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.5;
+  background-color: #f0f0f0;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #087f5b;
+  color: #fff;
+
+  text-align: center;
+  padding: 10px 0;
+}
+
+main {
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+section {
+  margin-bottom: 20px;
+}
+
+h2 {
+  color: #333;
+  border-bottom: 2px solid #ccc;
+  padding-bottom: 5px;
+}
+
+footer {
+  text-align: center;
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #087f5b;
+  color: #e6fcf5;
+}
+
+img {
+  height: 200px;
+
+  border-radius: 8px;
+  transform: scale(2);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.25);
+}
+.carousel {
+  width: 600px;
+  height: 300px;
+  margin: 30px auto;
+  background-color: #087f5b;
+  padding: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 50px;
+  padding-left: 86px;
+  position: relative;
+  padding-right: 48px;
+}
+
+.testimonial-text {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin-bottom: 32px;
+  color: #e6fcf5;
+}
+.testimonial-author {
+  font-size: 14px;
+  margin-bottom: 4px;
+  color: #c3fae8;
+  padding-top: 50px;
+}
+.testimonial-job {
+  font-size: 12px;
+  color: #c3fae8;
+}
+.btn {
+  background-color: #fff;
+  border: none;
+  height: 40px;
+  width: 40px;
+  position: absolute;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 50%;
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+}
+.btn-icon {
+  height: 24px;
+  width: 24px;
+}
+.btn--left {
+  left: 0;
+  transform: translate(-50%, -50%);
+}
+.btn--right {
+  right: 0;
+  transform: translate(50%, -50%);
+}
+.dots {
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%, 32px);
+  bottom: 0;
+  display: flex;
+  gap: 12px;
+}
+.dot {
+  height: 12px;
+  width: 12px;
+  background: #fff;
+  border: 2px solid #087f5b;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.dot--fill1 {
+  background-color: #087f5b;
+}
+.count {
+  font-size: 30px;
+  text-align: center;
+  font-weight: 700;
+  color: #087f5b;
+}
