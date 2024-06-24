@@ -36,17 +36,19 @@ let quotes = [
   "Anjali, your determination to pursue your PhD with such focus and dedication is truly admirable. Your intellectual curiosity and passion for your field shine brightly, inspiring everyone around you. I am incredibly proud to see you achieving your dreams and making a difference in the world.",
 ];
 let image = [
-  "00000PORTRAIT_00000_BURST20200309173442525.jpg",
+  "00000PORTRAIT_00000_BURST20200309173410155.jpg",
   "00100sPORTRAIT_00100_BURST20200309173239199_COVER.jpg",
   "IMG_20200309_173033.jpg",
-  "00000PORTRAIT_00000_BURST20200309173410155.jpg",
+  "00000PORTRAIT_00000_BURST20200309173442525.jpg",
 ];
 
 let btn1 = document.querySelector(".btn--right");
 let btn2 = document.querySelector(".btn--left");
 let j = 0;
+let l = 4;
 btn1.addEventListener("click", () => {
   j++;
+  l--;
   let para = document.querySelector(".para");
   let img = document.querySelector("img");
   let para2 = document.querySelector(".testimonial-author");
@@ -59,28 +61,36 @@ btn1.addEventListener("click", () => {
   if (j == 1) {
     dot.classList.remove("dot--fill1");
     dot1.classList.add("dot--fill1");
+    para.innerHTML = quotes[j];
+    img.src = image[j];
   } else if (j == 2) {
     dot1.classList.remove("dot--fill1");
     dot2.classList.add("dot--fill1");
+    para.innerHTML = quotes[j];
+    img.src = image[j];
   } else if (j == 3) {
     dot2.classList.remove("dot--fill1");
     dot3.classList.add("dot--fill1");
+    para.innerHTML = quotes[j];
+    img.src = image[j];
   } else if (j == 4) {
     dot3.classList.remove("dot--fill1");
     dot.classList.add("dot--fill1");
     j = 0;
+    l = 4;
+    para.innerHTML = quotes[j];
+    img.src = image[j];
   }
 
-  let i = Math.floor(Math.random() * 4);
-  para.innerHTML = quotes[i];
-  img.src = image[i];
   para2.innerHTML = "";
   para3.innerHTML = "";
 });
 
-let k = 4;
+k = 4;
+let m = 0;
 btn2.addEventListener("click", () => {
   k--;
+  m++;
   let para = document.querySelector(".para");
   let img = document.querySelector("img");
   let para2 = document.querySelector(".testimonial-author");
@@ -93,21 +103,26 @@ btn2.addEventListener("click", () => {
   if (k == 3) {
     dot.classList.remove("dot--fill1");
     dot3.classList.add("dot--fill1");
+    para.innerHTML = quotes[k];
+    img.src = image[k];
   } else if (k == 2) {
     dot3.classList.remove("dot--fill1");
     dot2.classList.add("dot--fill1");
+    para.innerHTML = quotes[k];
+    img.src = image[k];
   } else if (k == 1) {
     dot2.classList.remove("dot--fill1");
     dot1.classList.add("dot--fill1");
+    para.innerHTML = quotes[k];
+    img.src = image[k];
   } else if (k == 0) {
     dot1.classList.remove("dot--fill1");
     dot.classList.add("dot--fill1");
+    para.innerHTML = quotes[k];
+    img.src = image[k];
     k = 4;
+    m = 0;
   }
-
-  let i = Math.floor(Math.random() * 4);
-  para.innerHTML = quotes[i];
-  img.src = image[i];
   para2.innerHTML = "";
   para3.innerHTML = "";
 });
