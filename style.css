@@ -4,14 +4,16 @@ body {
   background-color: #f0f0f0;
   margin: 0;
   padding: 0;
+  background-image:url("IMG_20200309_173033.jpg") ;
+  
 }
 
 header {
-  background-color: #087f5b;
+  /* background-color: #087f5b; */
   color: #fff;
 
   text-align: center;
-  padding: 10px 0;
+  padding: 0 0;
 }
 
 main {
@@ -33,12 +35,27 @@ h2 {
   border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
 }
+h3{
+  margin: 0 auto;
+  text-align: center;
+  color: #fff;
+  font-size: 26px;
+  line-height: 1.8;
+  
+}
+h4{
+  margin: 0 auto;
+  text-align: center;
+  color: #087f5bb4;
+  font-size: 11px;
+  line-height: 2;
+}
 
 footer {
   text-align: center;
   margin-top: 20px;
   padding: 10px;
-  background-color: #087f5b;
+  /* background-color: #087f5b; */
   color: #e6fcf5;
 }
 
@@ -132,3 +149,35 @@ img {
   font-weight: 700;
   color: #087f5b;
 }
+.gen {
+  background-color: #087f5b; 
+  border: none;
+  color: white; 
+  padding: 15px 32px; 
+  text-align: center; 
+  text-decoration: none; 
+ display: block;
+  font-size: 16px; 
+  margin: 0 auto; 
+  cursor: pointer; 
+  border-radius: 8px; 
+  transition: background-color 0.3s ease;
+  
+  text-align: center;
+}
+
+
+.gen:hover {
+  background-color: #45a049; 
+}
+
+
+.gen:active {
+  background-color: #3e8e41; 
+}
+.gen:disabled {
+  background-color: #cccccc; 
+  cursor: not-allowed; 
+}
+
+
