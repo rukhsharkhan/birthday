@@ -92,6 +92,7 @@ const wishes = [
 ];
 
 let currentIndex = 0;
+let currentImg = 0;
 
 const updateCarousel = () => {
   const para = document.querySelector(".para");
@@ -99,7 +100,7 @@ const updateCarousel = () => {
   const dots = document.querySelectorAll(".dot");
 
   para.innerHTML = quotes[currentIndex];
-  img.src = images[currentIndex];
+  img.src = images[currentImg];
 
   dots.forEach(dot => dot.classList.remove("dot--fill1"));
   dots[currentIndex].classList.add("dot--fill1");
@@ -107,11 +108,13 @@ const updateCarousel = () => {
 
 document.querySelector(".btn--right").addEventListener("click", () => {
   currentIndex = (currentIndex + 1) % quotes.length;
+  currentImg = (currentImg+ 1) % images.length;
   updateCarousel();
 });
 
 document.querySelector(".btn--left").addEventListener("click", () => {
   currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+  currentImg = (currentImg - 1 + images.length) % images.length;
   updateCarousel();
 });
 
