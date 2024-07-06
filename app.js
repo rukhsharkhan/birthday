@@ -107,14 +107,16 @@ const updateCarousel = () => {
 };
 
 document.querySelector(".btn--right").addEventListener("click", () => {
-  currentIndex = (currentIndex + 1) % quotes.length;
   currentImg = (currentImg+ 1) % images.length;
+  currentIndex = (currentIndex + 1) % quotes.length;
+  
   updateCarousel();
 });
 
 document.querySelector(".btn--left").addEventListener("click", () => {
-  currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
   currentImg = (currentImg - 1 + images.length) % images.length;
+  currentIndex = (currentIndex - 1 + quotes.length) % quotes.length;
+  
   updateCarousel();
 });
 
