@@ -98,9 +98,14 @@ const updateCarousel = () => {
   const para = document.querySelector(".para");
   const img = document.querySelector("img");
   const dots = document.querySelectorAll(".dot");
+  const author = document.querySelectorAll(".testimonial-author");
+  const job = document.querySelectorAll(".testimonial-job");
 
   para.innerHTML = quotes[currentIndex];
   img.src = images[currentImg];
+  author.innerText="";
+  job.innerText="";
+
 
   dots.forEach(dot => dot.classList.remove("dot--fill1"));
   dots[currentIndex].classList.add("dot--fill1");
