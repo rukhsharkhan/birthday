@@ -24,6 +24,7 @@ main {
   border: 1px solid #ccc;
   border-radius: 5px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+ position: relative;
 }
 
 section {
@@ -179,5 +180,107 @@ img {
   background-color: #cccccc; 
   cursor: not-allowed; 
 }
+/* Media Queries for Mobile Responsiveness */
+
+@media (max-width: 650px) {
+  body {
+    font-size: 14px;
+    padding: 0;
+  }
+
+  header {
+    padding: 10px;
+  }
+
+  main {
+    width: 100%;
+    margin: 10px auto;
+    padding: 10px;
+    box-shadow: none;
+    border: none;
+  }
+
+  section {
+    margin-bottom: 15px;
+  }
+
+  h2, h3, h4 {
+    font-size: 20px;
+    padding-bottom: 5px;
+  }
+
+  .carousel {
+    width: 100%;
+    height: auto;
+    padding: 10px;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel img {
+    width: 100%;
+    height: auto;
+    transform: scale(1);
+    box-shadow: none;
+  }
+
+  .testimonial-text {
+    font-size: 16px;
+    margin-bottom: 10px;
+  }
+
+  .testimonial-author, .testimonial-job {
+    font-size: 12px;
+    margin-bottom: 5px;
+  }
+
+  .btn {
+    height: 30px;
+    width: 30px;
+  }
+
+  .btn-icon {
+    height: 18px;
+    width: 18px;
+  }
+
+  .btn--left {
+    left: 5px;
+    transform: translate(0, -50%);
+  }
+
+  .btn--right {
+    right: 5px;
+    transform: translate(0, -50%);
+  }
+
+  .dots {
+    gap: 8px;
+    bottom: -10px;
+  }
+
+  .dot {
+    height: 10px;
+    width: 10px;
+  }
+
+  .gen {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+  #wishes{
+    padding: 30px;
+  }
+  .wish{
+    text-align: center;
+  }
+}
+
+  
+
+
 
 
