@@ -98,23 +98,23 @@ const updateCarousel = () => {
   const para = document.querySelector(".para");
   const img = document.querySelector("img");
   const dots = document.querySelectorAll(".dot");
-  const author = document.querySelectorAll(".testimonial-author");
-  const job = document.querySelectorAll(".testimonial-job");
+  
 
   para.innerHTML = quotes[currentIndex];
   img.src = images[currentImg];
-  author.innerText="";
-  job.innerText="";
-
+ 
 
   dots.forEach(dot => dot.classList.remove("dot--fill1"));
   dots[currentIndex].classList.add("dot--fill1");
 };
 
+let c=0;
 document.querySelector(".btn--right").addEventListener("click", () => {
+  c++;
   currentImg = (currentImg+ 1) % images.length;
   currentIndex = (currentIndex + 1) % quotes.length;
-  
+
+
   updateCarousel();
 });
 
@@ -141,4 +141,60 @@ genbtn.addEventListener("click",()=>{
   }
 });
 
+document.addEventListener('DOMContentLoaded', loadMessages);
 
+function postMessage() {
+    const message = document.getElementById('message').value;
+    if (message.trim() === "") return;  // Prevent empty messages
+    saveMessage(message);
+    document.getElementById('message').value = '';
+    loadMessages();  // Refresh the messages
+}
+
+function saveMessage(message) {
+    let messages = JSON.parse(localStorage.getItem('messages')) || [];
+    messages.push(message);
+    localStorage.setItem('messages', JSON.stringify(messages));
+}
+
+function loadMessages() {
+    const messages = JSON.parse(localStorage.getItem('messages')) || [];
+    const messagesDiv = document.getElementById('messages');
+    messagesDiv.innerHTML = '';  // Clear the div first
+    messages.forEach((message, index) => {
+        const messageContainer = document.createElement('div');
+        messageContainer.classList.add('message-container');
+        const p = document.createElement('p');
+        p.textContent = message;
+        const deleteButton = document.createElement('button');
+       
+        deleteButton.textContent = 'Delete';
+        deleteButton.classList.add("delete");
+        deleteButton.onclick = () => deleteMessage(index);
+        messageContainer.appendChild(p);
+        messageContainer.appendChild(deleteButton);
+        messagesDiv.appendChild(messageContainer);
+    });
+}
+
+function deleteMessage(index) {
+    let messages = JSON.parse(localStorage.getItem('messages')) || [];
+    messages.splice(index, 1);
+    localStorage.setItem('messages', JSON.stringify(messages));
+    loadMessages();  // Refresh the messages
+}
+const confettiCanvas = document.getElementById('confetti');
+const confettiSettings = {
+    particleCount: 200,
+    spread: 160
+};
+
+function launchConfetti() {
+    confetti.create(confettiCanvas, {
+        resize: true,
+        useWorker: true
+    })(confettiSettings);
+    setTimeout(launchConfetti, 2000); 
+}
+
+launchConfetti();

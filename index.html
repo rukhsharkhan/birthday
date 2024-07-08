@@ -13,6 +13,7 @@
       <h1>HAPPY BIRTHDAY</h1>
     </header>
     <main>
+      
     
       <section id="about">
         <h2>Dr. ANJALI SINGH</h2>
@@ -24,6 +25,8 @@
           to me—a true friend who brings warmth and positivity into my life.
         </p>
       </section>
+       
+    
       <section id="gallery">
         <h2>Photo Gallery</h2>
        
@@ -85,18 +88,35 @@
       </section>
       <section id="wishes">
         <h2 class="wish">Birthday Wishes</h2>
-        <h3></h3>
+        <h3><canvas id="confetti" style="text-align: center;"></canvas></h3>
+
         <h4>Wish Generator</h4>
      
         <button class="gen">Generate</button>
       </section>
+      <audio controls autoplay>
+        <source src="happy-birthday-to-you-122428.mp3" type="audio/mpeg">
+       
+    </audio>
+    
+      <section>
+        <div class="message-board">
+          <h3>Leave a Message</h3>
+          <textarea id="message" placeholder="Write your message here..."></textarea>
+          <button onclick="postMessage()" class="post">Post</button>
+          <div id="messages"></div>
+          
+      </div>
       
+      
+      </section>
+    
     </main>
     <footer>
 
       <p>&copy; 2024 Rukhshar Khan All rights reserved.</p>
     </footer>
-
+    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
     <script src="app.js"></script>
   </body>
 </html>
