@@ -1,123 +1,86 @@
-
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>Happy Birthday</title>
+</head>
+<body>
+  <header>
+    <h1>HAPPY BIRTHDAY</h1>
+  </header>
+  <main>
+    <section id="about">
+      <h2>Dr. ANJALI SINGH</h2>
+      <p>
+        Anjali, my sunshine, is the embodiment of maturity and radiance. A
+        talented dancer and exceptional communicator, you always lend your
+        unwavering support and provide thoughtful advice. You are a good
+        listener, a good person overall, and the best thing that has happened
+        to me—a true friend who brings warmth and positivity into my life.
+      </p>
+    </section>
 
-    <title>Happy Birthday</title>
-  </head>
-  <body>
-    <script src="https://cdn.jsdelivr.net/npm/axios@1.6.7/dist/axios.min.js"></script>
-    <header>
-      <h1>HAPPY BIRTHDAY</h1>
-    </header>
-    <main>
-      
-    
-      <section id="about">
-        <h2>Dr. ANJALI SINGH</h2>
-        <p>
-          Anjali, my sunshine, is the embodiment of maturity and radiance. A
-          talented dancer and exceptional communicator, you always lends your
-          unwavering support and provides thoughtful advice. You are a good
-          listener, a good person overall, and the best thing that has happened
-          to me—a true friend who brings warmth and positivity into my life.
-        </p>
-      </section>
-       
-    
-      <section id="gallery">
-        <h2>Photo Gallery</h2>
-       
-        <div class="carousel">
-          <img
-            src="00000PORTRAIT_00000_BURST20200309173410155.jpg"
-            alt="maria de almedia"
-          />
-          <blockquote class="testimonial-text">
-            <p class="para">
-              Can you believe it's been 20 years of awesome adventures, crazy
-              laughter, and unstoppable support? From teenage shenanigans to
-              adulting struggles, we've been through it all. Grateful for your
-              friendship and excited for more years of craziness ahead!
-            </p>
-            <p class="testimonial-author">Rukhshar Khan</p>
-            <p class="testimonial-job">Your Best Friend</p>
-          </blockquote>
-          <button class="btn btn--left">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="{1.5}"
-              stroke="currentColor"
-              className="btn-icon"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M15.75 19.5L8.25 12l7.5-7.5"
-              />
-            </svg>
-          </button>
-          <button class="btn btn--right">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="{1.5}"
-              stroke="currentColor"
-              className="btn-icon"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M8.25 4.5l7.5 7.5-7.5 7.5"
-              />
-            </svg>
-          </button>
-          <div class="dots">
-            <button class="dot dot1 dot--fill1">&nbsp;</button>
-            <button class="dot dot2">&nbsp;</button>
-            <button class="dot dot3">&nbsp;</button>
-            <button class="dot dot4">&nbsp;</button>
-          </div>
+    <section id="gallery">
+      <h2>Photo Gallery</h2>
+      <div class="carousel">
+        <img src="00000PORTRAIT_00000_BURST20200309173410155.jpg" alt="maria de almedia">
+        <blockquote class="testimonial-text">
+          <p class="para">
+            Can you believe it's been 20 years of awesome adventures, crazy
+            laughter, and unstoppable support? From teenage shenanigans to
+            adulting struggles, we've been through it all. Grateful for your
+            friendship and excited for more years of craziness ahead!
+          </p>
+          <p class="testimonial-author">Rukhshar Khan</p>
+          <p class="testimonial-job">Your Best Friend</p>
+        </blockquote>
+        <button class="btn btn--left">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="btn-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15.75 19.5L8.25 12l7.5-7.5" />
+          </svg>
+        </button>
+        <button class="btn btn--right">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="btn-icon">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
+          </svg>
+        </button>
+        <div class="dots">
+          <button class="dot dot1 dot--fill1">&nbsp;</button>
+          <button class="dot dot2">&nbsp;</button>
+          <button class="dot dot3">&nbsp;</button>
+          <button class="dot dot4">&nbsp;</button>
         </div>
-        
-      </section>
-      <section id="wishes">
-        <h2 class="wish">Birthday Wishes</h2>
-        <h3><canvas id="confetti" style="text-align: center;"></canvas></h3>
-
-        <h4>Wish Generator</h4>
-     
-        <button class="gen">Generate</button>
-      </section>
-      <audio controls autoplay>
-        <source src="happy-birthday-to-you-122428.mp3" type="audio/mpeg">
-       
-    </audio>
-    
-      <section>
-        <div class="message-board">
-          <h3>Leave a Message</h3>
-          <textarea id="message" placeholder="Write your message here..."></textarea>
-          <button onclick="postMessage()" class="post">Post</button>
-          <div id="messages"></div>
-          
       </div>
-      
-      
-      </section>
-    
-    </main>
-    <footer>
+    </section>
 
-      <p>&copy; 2024 Rukhshar Khan All rights reserved.</p>
-    </footer>
-    <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
-    <script src="app.js"></script>
-  </body>
+    <section id="wishes">
+      <h2 class="wish">Birthday Wishes</h2>
+      <h3><canvas id="confetti"></canvas></h3>
+      <h4>Wish Generator</h4>
+      <button class="gen">Generate</button>
+    </section>
+
+    <audio controls autoplay>
+      <source src="happy-birthday-to-you-122428.mp3" type="audio/mpeg">
+    </audio>
+
+    <section>
+      <div class="message-board">
+        <h3>Leave a Message</h3>
+        <textarea id="message" placeholder="Write your message here..."></textarea>
+        <button onclick="postMessage()" class="post">Post</button>
+        <div id="messages"></div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; 2024 Rukhshar Khan All rights reserved.</p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/canvas-confetti@1.4.0/dist/confetti.browser.min.js"></script>
+  <script src="app.js"></script>
+</body>
 </html>

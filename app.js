@@ -1,6 +1,6 @@
 const birthdayDate = new Date("2024-07-13 00:00:00 GMT");
 const countdownElement = document.createElement("div");
-countdownElement.classList.add("count");
+countdownElement.classList.add("count"); // Corrected class addition
 
 function updateCountdown() {
   const now = new Date();
@@ -12,19 +12,21 @@ function updateCountdown() {
     const minutes = Math.floor((difference % (1000 * 60 * 60)) / (1000 * 60));
     const seconds = Math.floor((difference % (1000 * 60)) / 1000);
 
-    countdownElement.innerHTML = <p>Countdown to Birthday: ${days}d ${hours}h ${minutes}m ${seconds}s</p>;
+    countdownElement.innerHTML = `<p>Countdown to Birthday: ${days}d ${hours}h ${minutes}m ${seconds}s</p>`;
   } else {
     countdownElement.innerHTML = "<p>Happy Birthday!</p>";
   }
 }
 
-// Update every second
+
+updateCountdown();
+
+
 setInterval(updateCountdown, 1000);
 
-// Add the countdown element to the section with id "about"
-const aboutSection = document.getElementById("about");
-aboutSection.appendChild(countdownElement);
 
+let aboutsection=document.querySelector("#about");
+aboutsection.appendChild(countdownElement);
 const quotes = [
   "I am truly grateful to have you in my life. You effortlessly command attention with your intelligence and sensibility, becoming the center of attraction wherever you go. Your unique blend of charm and intellect enriches my life, and I cherish the moments spent with you as a true privilege.",
   "Your unwavering dedication to your PhD journey is nothing short of inspiring, Anjali. Your resilience and passion for learning show that no challenge is too great. I am continually amazed by your ability to balance everything with grace and intelligence.",
@@ -90,7 +92,6 @@ const wishes = [
   "May you continue to inspire those around you.",
   "Here's to our unbreakable bond and friendship."
 ];
-
 let currentIndex = 0;
 let currentImg = 0;
 
@@ -98,23 +99,18 @@ const updateCarousel = () => {
   const para = document.querySelector(".para");
   const img = document.querySelector("img");
   const dots = document.querySelectorAll(".dot");
-  
 
   para.innerHTML = quotes[currentIndex];
   img.src = images[currentImg];
- 
 
   dots.forEach(dot => dot.classList.remove("dot--fill1"));
   dots[currentIndex].classList.add("dot--fill1");
 };
 
-let c=0;
 document.querySelector(".btn--right").addEventListener("click", () => {
-  c++;
   currentImg = (currentImg+ 1) % images.length;
   currentIndex = (currentIndex + 1) % quotes.length;
-
-
+  
   updateCarousel();
 });
 
@@ -134,7 +130,7 @@ genbtn.addEventListener("click",()=>{
   
   let h3=document.querySelector("h3");
   h3.innerText=wishes[i];
-  h3.style.backgroundImage=url("IMG_20200309_173033.jpg");
+  
   i++;
   if(i==wishes.length){
     i=0;
@@ -183,18 +179,20 @@ function deleteMessage(index) {
     localStorage.setItem('messages', JSON.stringify(messages));
     loadMessages();  // Refresh the messages
 }
+
 const confettiCanvas = document.getElementById('confetti');
 const confettiSettings = {
     particleCount: 200,
     spread: 160
 };
 
+
 function launchConfetti() {
     confetti.create(confettiCanvas, {
         resize: true,
         useWorker: true
     })(confettiSettings);
-    setTimeout(launchConfetti, 2000); 
+    setTimeout(launchConfetti, 2000); // Adjust the interval as needed
 }
 
 launchConfetti();
