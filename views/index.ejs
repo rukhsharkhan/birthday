@@ -101,14 +101,14 @@
     
     <section>
       <div class="message-board">
-        <h3>Leave a Message</h3>
+        <h1>Leave a Message</h1>
         <textarea id="message" placeholder="Write your message here..."></textarea>
         <button onclick="postMessage()" class="post">Post</button>
         <div id="messages">
-          <% messages.forEach((message, index) => { %>
+          <% messages.forEach((message) => { %>
             <div class="message-container">
-              <p><%= message %></p>
-              <button onclick="deleteMessage(<%= index %>)" class="delete">Delete</button>
+              <p><%= message.message %></p>
+              <button onclick="deleteMessage(<%= message.id %>)" class="delete">Delete</button>
             </div>
           <% }) %>
         </div>

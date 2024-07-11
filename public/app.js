@@ -175,14 +175,18 @@ async function loadMessages() {
   }
 }
 
-async function deleteMessage(index) {
+async function deleteMessage(id) {
   try {
-    await axios.delete(`/messages/${index}`);
-    location.reload();
+    await axios.delete(`/messages/${id}`);
+    location.reload(); 
   } catch (error) {
     console.error("Error deleting message:", error);
   }
 }
+
+
+deleteMessage(message.id);
+
 const confettiCanvas = document.getElementById("confetti");
 const confettiSettings = {
   particleCount: 200,
