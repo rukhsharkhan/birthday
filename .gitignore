@@ -1,0 +1,35 @@
+# Logs
+logs
+*.log
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+# Environment variables
+.env
+
+# Dependency directories
+node_modules/
+
+# Build artifacts
+build/
+
+# IDE files
+.vscode/
+.idea/
+
+# OS generated files
+.DS_Store
+Thumbs.db
+
+# Ignore database config if you have it in a separate file
+config/database.js
+
+# Ignore npm debug log
+npm-debug.log*
+
+# Ignore user specific config files
+config/keys.js
