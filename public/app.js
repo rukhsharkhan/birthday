@@ -139,53 +139,52 @@ genbtn.addEventListener("click", () => {
   }
 });
 
-async function postMessage() {
-  const message = document.getElementById("message").value;
-  if (message.trim() === "") return;
-  try {
-    await axios.post("/messages", { message });
-    document.getElementById("message").value = "";
-    location.reload();
-  } catch (error) {
-    console.error("Error posting message:", error);
-  }
-}
+document.addEventListener('DOMContentLoaded', loadMessages);
 
-async function loadMessages() {
-  try {
-    const response = await axios.get("http://localhost:3000/messages");
-    const messages = response.data;
-    const messagesDiv = document.getElementById("messages");
-    messagesDiv.innerHTML = "";
-    messages.forEach((message, index) => {
-      const messageContainer = document.createElement("div");
-      messageContainer.classList.add("message-container");
-      const p = document.createElement("p");
-      p.textContent = message;
-      const deleteButton = document.createElement("button");
-      deleteButton.textContent = "Delete";
-      deleteButton.classList.add("delete");
-      deleteButton.onclick = () => deleteMessage(index);
-      messageContainer.appendChild(p);
-      messageContainer.appendChild(deleteButton);
-      messagesDiv.appendChild(messageContainer);
-    });
-  } catch (error) {
-    console.error("Error loading messages:", error);
-  }
-}
+      async function postMessage() {
+        const message = document.getElementById('message').value;
+        if (message.trim() === "") return;  // Prevent empty messages
+        try {
+          await axios.post('http://localhost:8080/messages', { message });
+          document.getElementById('message').value = '';
+          loadMessages();  // Refresh the messages
+        } catch (error) {
+          console.error('Error posting message:', error);
+        }
+      }
 
-async function deleteMessage(id) {
-  try {
-    await axios.delete(`/messages/${id}`);
-    location.reload(); 
-  } catch (error) {
-    console.error("Error deleting message:", error);
-  }
-}
+      async function loadMessages() {
+        try {
+          const response = await axios.get('http://localhost:8080/messages');
+          const messages = response.data;
+          const messagesDiv = document.getElementById('messages');
+          messagesDiv.innerHTML = '';  // Clear the div first
+          messages.forEach((message, index) => {
+            const messageContainer = document.createElement('div');
+            messageContainer.classList.add('message-container');
+            const p = document.createElement('p');
+            p.textContent = message;
+            const deleteButton = document.createElement('button');
+            deleteButton.textContent = 'Delete';
+            deleteButton.classList.add("delete");
+            deleteButton.onclick = () => deleteMessage(index);
+            messageContainer.appendChild(p);
+            messageContainer.appendChild(deleteButton);
+            messagesDiv.appendChild(messageContainer);
+          });
+        } catch (error) {
+          console.error('Error loading messages:', error);
+        }
+      }
 
-
-deleteMessage(message.id);
+      async function deleteMessage(index) {
+        try {
+          await axios.delete(`http://localhost:8080/messages/${index}`);
+          loadMessages();  // Refresh the messages
+        } catch (error) {
+          console.error('Error deleting message:', error);
+        }
+      }
 
 const confettiCanvas = document.getElementById("confetti");
 const confettiSettings = {
